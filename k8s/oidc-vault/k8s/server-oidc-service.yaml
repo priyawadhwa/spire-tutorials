@@ -6,6 +6,7 @@ metadata:
   namespace: spire
 spec:
   type: LoadBalancer
+  loadBalancerIP: "34.67.87.124"
   selector:
     app: spire-server
   ports:

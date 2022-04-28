@@ -9,7 +9,7 @@ data:
       bind_address = "0.0.0.0"
       bind_port = "8081"
       socket_path = "/tmp/spire-server/private/api.sock"
-      trust_domain = "example.org"
+      trust_domain = "oidc.priya-chainguard.dev"
       data_dir = "/run/spire/data"
       log_level = "DEBUG"
       experimental {
@@ -26,7 +26,7 @@ data:
 
       # Creates the iss claim in JWT-SVIDs.
       # TODO: Replace MY_DISCOVERY_DOMAIN with the FQDN of the Discovery Provider that you will configure in DNS
-      jwt_issuer = "MY_DISCOVERY_DOMAIN"
+      jwt_issuer = "oidc.priya-chainguard.dev"
 
       default_svid_ttl = "1h"
       ca_subject = {
@@ -48,7 +48,7 @@ data:
         plugin_data {
           clusters = {
             # TODO: Change this to your cluster name
-            "MY_CLUSTER_NAME" = {
+            "gke_priya-chainguard_us-central1-c_priya" = {
               use_token_review_api_validation = true
               service_account_allow_list = ["spire:spire-agent"]
             }
